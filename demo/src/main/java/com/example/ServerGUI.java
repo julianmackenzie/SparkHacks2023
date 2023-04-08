@@ -59,7 +59,7 @@ public class ServerGUI extends Application{
 			serverConnection = new Server(data -> {
 				Platform.runLater(()->{
 					// Writes the data member message to the listView
-					Information info = (Information)data;					
+					Information info = (Information)data;
 					listItems.getItems().add(info.message);
 				});
 			});

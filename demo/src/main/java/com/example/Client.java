@@ -36,6 +36,7 @@ public class Client extends Thread {
             socketClient.setTcpNoDelay(true);
         } catch(Exception e) {}
 
+
         while (true) {
             try {
                 Information receive = (Information)in.readObject();
