@@ -55,7 +55,7 @@
       </VBox>
    </top>
    <center>
-      <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="eventList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
       <Button mnemonicParsing="false" text="Add New Event" BorderPane.alignment="BOTTOM_LEFT">
