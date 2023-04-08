@@ -21,11 +21,11 @@ public class Client extends Thread {
 
     private Consumer<Serializable> callback;
 
-    public String gameInfo;
+    public Information gameInfo;
 
     Client(Consumer<Serializable> call) {
         callback = call;
-        this.gameInfo = "New Information";
+        //this.gameInfo.message = "New Information";
     }
 
     public void run() {
@@ -38,23 +38,22 @@ public class Client extends Thread {
 
         while (true) {
             try {
-                String receive = (String)in.readObject();
+                Information receive = (Information)in.readObject();
                 gameInfo = receive;
                 callback.accept(gameInfo);
             } catch (Exception e) {}
         } // end while()
     } // end run()
 
-    public void sendGame() {
+    public void sendGame(Information toSend) {
         try {
             out.reset();
-            gameInfo = "Receiving this??";
-            out.writeObject(gameInfo);
-            gameInfo = "Move was sent";
+            //gameInfo = "Receiving this??";
+            out.writeObject(toSend);
+            gameInfo.message = "Move was sent";
             callback.accept(gameInfo);
         } catch (IOException e) {
             e.printStackTrace();
         }
     } // end sendGame()
-
 }

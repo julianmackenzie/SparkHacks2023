@@ -22,17 +22,17 @@ public class Server {
     }
 
     public class TheServer extends Thread {
-        public String gameInfo;
+        public Information gameInfo;
 
         TheServer() {
-            gameInfo = "New String";
+            gameInfo = new Information();
         }
         
         public void run() {
             try (ServerSocket mySocket = new ServerSocket(port);) {
                 while (true) {
                     ClientThread c = new ClientThread(mySocket.accept(), clientCount, gameInfo);
-                    gameInfo = "Client has connected: Welcome Client " + clientCount;
+                    gameInfo.message = "Client has connected: Welcome Client " + clientCount;
                     callback.accept(gameInfo);
                     clients.add(c);
                     c.start();
@@ -40,7 +40,7 @@ public class Server {
                 }
             }
             catch (Exception e) {
-                gameInfo = "Server didn't work";
+                gameInfo.message = "Server didn't work";
                 callback.accept(gameInfo);
             }
         }
@@ -51,14 +51,14 @@ public class Server {
         int count1;
         ObjectInputStream in;
         ObjectOutputStream out;
-        public String gameInfo;
-        ClientThread(Socket s, int c1, String info) {
+        public Information gameInfo;
+        ClientThread(Socket s, int c1, Information info) {
             this.connection = s;
             this.count1 = c1;
             gameInfo = info;
         }
 
-        void updateClient(String info) {
+        void updateClient(Information info) {
             for (int i = 0; i < clients.size(); i++) {
                 ClientThread t = clients.get(i);
                 try {
@@ -79,13 +79,14 @@ public class Server {
 
             while (true) {
                 try {
-                    String received = (String)in.readObject();
+                    Information received = (Information)in.readObject();
                     gameInfo = received;
 
                     callback.accept(gameInfo);
+                    updateClient(gameInfo);
                 }
                 catch (Exception e) {
-                    gameInfo = "Oops, something went wrong with the socket";
+                    gameInfo.message = "Oops, something went wrong with the socket";
                     callback.accept(gameInfo);
                     updateClient(gameInfo);
                     clients.remove(this);
