@@ -14,7 +14,7 @@
    <top>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" BorderPane.alignment="CENTER">
          <font>
-            <Font size="36.0" />
+            <Font name="Arial" size="36.0" />
          </font>
          <BorderPane.margin>
             <Insets top="40.0" />
@@ -26,7 +26,7 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Notification Settings">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Arial" size="18.0" />
                </font>
                <VBox.margin>
                   <Insets left="10.0" top="20.0" />
@@ -36,7 +36,7 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I would like to be pinged for...">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="6.0" />
@@ -44,43 +44,31 @@
                   </Text>
                   <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Street">
                      <font>
-                        <Font size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="6.0" />
-                     </VBox.margin>
-                  </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Art">
-                     <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Shows">
+                  <ToggleButton layoutX="30.0" layoutY="37.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Art">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
                   </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Food">
+                  <ToggleButton layoutX="30.0" layoutY="77.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Shows">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
                   </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Other">
+                  <ToggleButton layoutX="30.0" layoutY="117.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Food">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
+                  </ToggleButton>
+                  <ToggleButton layoutX="30.0" layoutY="157.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Other">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
                   </ToggleButton>
                </children>
                <padding>
@@ -98,25 +86,25 @@
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text=".5 mi">
-                     <HBox.margin>
-                        <Insets left="20.0" top="10.0" />
-                     </HBox.margin>
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets left="30.0" top="13.0" />
+                     </HBox.margin>
                   </Text>
                   <Slider max="5.0" min="0.5">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" top="14.0" />
                      </HBox.margin>
                   </Slider>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5mi">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=".5 mi">
                      <font>
-                        <Font size="14.0" />
+                        <Font name="Arial" size="14.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets top="13.0" />
+                     </HBox.margin>
                   </Text>
                </children>
             </HBox>
@@ -126,10 +114,10 @@
    <bottom>
       <Button mnemonicParsing="false" text="Save Settings" BorderPane.alignment="CENTER" onAction="#switchToMainView">
          <font>
-            <Font size="18.0" />
+            <Font name="Arial" size="24.0" />
          </font>
          <BorderPane.margin>
-            <Insets bottom="40.0" />
+            <Insets bottom="80.0" />
          </BorderPane.margin>
       </Button>
    </bottom>
